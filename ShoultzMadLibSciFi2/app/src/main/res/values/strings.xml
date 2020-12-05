@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ShoultzMadLibSciFi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Mad Libs and Sci-Fi Name Final Project</string>
+    <string name="nav_header_subtitle">By Caleb Shoultz</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_madlibs">Mad Libs</string>
+    <string name="menu_scifi">Sci-Fi Names</string>
+</resources>
