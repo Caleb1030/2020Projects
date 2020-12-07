@@ -42,6 +42,7 @@ public class MadLibsFragment extends Fragment {
         //final TextView textView = root.findViewById(R.id.text_slideshow);
         //My added code from SciFi name
         final LinearLayout inputLay = root.findViewById(R.id.inputLayout);
+        //sets variables to represent each of the text views in xml
         mLetter1 = (TextView) root.findViewById(R.id.txtLetter);
         mAdj = (TextView) root.findViewById(R.id.txtAdj);
         mAdv = (TextView) root.findViewById(R.id.txtAdv);
@@ -55,19 +56,23 @@ public class MadLibsFragment extends Fragment {
         mBody = (TextView) root.findViewById(R.id.txtBody);
         mPlural = (TextView) root.findViewById(R.id.txtPlural);
         mNumber = (TextView) root.findViewById(R.id.txtNumber);
+        //sets the output text label
         final TextView outputText = (TextView) root.findViewById(R.id.txtOutput);
         //how to setup a snackbar
         //https://developer.android.com/training/snackbar/showing#java
         //https://stackoverflow.com/questions/32305627/snackbar-is-not-working-within-fragment-class
+        //the snack bar can be called to create a pop up message at the button of the screen it is called later
         final Snackbar mySnackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "Error: All boxes need to be filled", BaseTransientBottomBar.LENGTH_SHORT);
         //end of my code
-
+        //creates the buttons for creating the madlib and resetting the mad lib
         final Button restartMadLib = root.findViewById(R.id.restartMadLib);
         final Button createMadLib = root.findViewById(R.id.btnMadLibSubmit);
+        //runs this function when the create button is clicked. checks if the program has everything it needs, then changes what the user sees.
         createMadLib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                //pulls in everything in the text boxes and converts it to strings
                 String letter1 = mLetter1.getText().toString();    //getText just gets the info out of the TextView
                 String adj1 = mAdj.getText().toString();
                 String adv1 = mAdv.getText().toString();
@@ -82,14 +87,17 @@ public class MadLibsFragment extends Fragment {
                 String plural = mPlural.getText().toString();
                 String number = mNumber.getText().toString();
 
+                //if statement checks to make sure all the text boxes at least have something in them
                 if(!letter1.equals("") && !adj1.equals("") && !adv1.equals("") && !person1.equals("") && !mPerson.equals("") && !mLocation.equals("") && !mNoun.equals("") && !mNoun2.equals("") &&
                        !mNoun3.equals("") && !mNoun4.equals("") && !mOccupation.equals("") && !mBody.equals("") && !mPlural.equals("") && !mNumber.equals("")) {
+                    //sets all the inputs to invisible and the create button to invisible and sets the output and reset button to visible
                     inputLay.setVisibility(GONE);
                     outputText.setVisibility(VISIBLE);
                     createMadLib.setVisibility(GONE);
                     restartMadLib.setVisibility(VISIBLE);
                     String print = "";
 
+                    //creates a string using format for printing out the mad lib with the inputs added
                     print += (String.format("Julius Caesar was born in %s B. %s.\n", number, letter1));
                     print += (String.format("He was a %s general, between 49 and 58 B. C. he defeated the Gauls, the Goths, and the %s.\n", adv1, plural));
                     print += (String.format("After that, he %s became more famous and defeated Pompey at the battle of %s at Pharsala.\n", adj1, location1));
@@ -99,22 +107,26 @@ public class MadLibsFragment extends Fragment {
                     print += (String.format("In 44 B.C., a soothsayer told Caesar to \"Beware the Ides of %s,\" but he ignored the warning and in March he was stabbed in the %s by a group of senators.\n", noun3, noun4));
                     print += (String.format("His last words were, \"Et tu %s?\"\n", person1));
 
-
+                    //sets the label as the output text
                     outputText.setText(print);
                 }
                 else{
+                    //calls the snack bar to tell the user that all boxes need to be filled
                     mySnackbar.show();
                 }
             }
         });
 
+        //controls the reset button
         restartMadLib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //changes the visibility so more madlibs can be inputted
                 outputText.setVisibility(GONE);
                 restartMadLib.setVisibility(GONE);
                 createMadLib.setVisibility(VISIBLE);
                 inputLay.setVisibility(VISIBLE);
+                //sets all the input text boxes to blank
                 mLetter1.setText("");
                 mAdj.setText("");
                 mAdv.setText("");
