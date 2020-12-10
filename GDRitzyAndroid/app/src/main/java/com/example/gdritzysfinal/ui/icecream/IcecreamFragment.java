@@ -31,13 +31,17 @@ public class IcecreamFragment extends Fragment {
         final CheckBox bowl = root.findViewById(R.id.bowlCone);
         final NumberPicker flavor = root.findViewById(R.id.flavorSelect);
         Button addIceCream = root.findViewById(R.id.addIceCream);
+        //setting up the number picker for the ice cream flavors
         flavor.setMinValue(0);
-        flavor.setMaxValue(10);
+        flavor.setMaxValue(15);
         final String[] flavorList = {"Richest Chocolate", "British Butter Toffee", "Cookie Butter", "Mint Chocolate Chunk", "Orange Dreamsicle",
                                 "Peaches N' Cream", "All Natural StrawBerry", "Butter Pecan Cashew", "Chunky Dory Fudge", "Coffee Break",
                                 "Mint Oreo", "O-O-Oreo", "Peanut Butter Cup", "Philadelphia Style Vanilla", "Sweet Cream", "Wild Mountain Blackberry"};
         flavor.setDisplayedValues(flavorList);
+        //sets up a popup to display if the wrong checkboxes are marked
         final Snackbar mySnackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "Only Select One Box", BaseTransientBottomBar.LENGTH_SHORT);
+        //adds the ice cream to the order once the button is clicked
+        //gets the checkboxes and the number picker
         addIceCream.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

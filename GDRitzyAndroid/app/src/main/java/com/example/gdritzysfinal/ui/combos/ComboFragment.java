@@ -79,6 +79,7 @@ public class ComboFragment extends Fragment {
         final String[] orderItemsCustomString = {intent.getStringExtra(ORDER_ITEMSCUSTOM)};
 
 
+        //these buttons change the visibilities of the layouts to allow the user to access the item order layouts
         singleRitzCombo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,6 +128,7 @@ public class ComboFragment extends Fragment {
                 burgerToppingsLay.setVisibility((view.VISIBLE));
             }
         });
+         //returns to the main combo screen
         comboHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,6 +144,7 @@ public class ComboFragment extends Fragment {
             }
         });
 
+        //uses the order buttons to add the items to the orders
         singleRitzComboOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,7 +159,7 @@ public class ComboFragment extends Fragment {
                 intent.putExtra((ORDER_ITEMSCUSTOM), orderItemsCustomString[0]);
                 //Log.d("Test", "Passed intent in combo fragment");
                 //Log.d("Test", "Gallery " + orderItemsString[0]);
-                OrderItems singleCombo = new OrderItems("Single Ritz Combo", 5.99, custom);
+                OrderItems singleCombo = new OrderItems("Single Ritz Combo", 4.99, custom);
                 MainActivity.addItem(singleCombo);
                 Log.d("Combo", String.valueOf(MainActivity.orderList.get(MainActivity.orderList.size()-1)));
                 //Log.d("Gallery Fragmnet", singleCombo.toString());
@@ -248,6 +251,7 @@ public class ComboFragment extends Fragment {
         return root;
     }
 
+    //this function returns a string for the toppings on the burgers
     public String getBurgerToppings(CheckBox bCC, CheckBox bTC, CheckBox bBC, CheckBox bMC, CheckBox bKC, CheckBox bMC2, CheckBox bPC, CheckBox bOC, CheckBox bLC ){
         String custom = "";
         if(bCC.isChecked()){custom += "Cheese, ";}
@@ -262,6 +266,7 @@ public class ComboFragment extends Fragment {
         return custom;
     }
 
+    //this function returns a string for the toppins on the hotdogs
     public String getHotDogToppings(CheckBox hdKC, CheckBox hdMC, CheckBox hdRC, CheckBox hdOC, CheckBox hdSC, CheckBox hdCHC, CheckBox hdCC){
         String custom = "";
         if(hdKC.isChecked()){custom += "Ketchup, ";}

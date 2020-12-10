@@ -52,6 +52,7 @@ public class HotdogsFragment extends Fragment {
         final String[] orderItemsCostsString = {intent.getStringExtra(ORDER_ITEMSCOST)};
         final String[] orderItemsCustomString = {intent.getStringExtra(ORDER_ITEMSCUSTOM)};
 
+        //buttons to navigate the layouts
         americanDogHD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +70,7 @@ public class HotdogsFragment extends Fragment {
             }
         });
 
+        //returns to the main hot dog screen
         hotdogHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,6 +81,7 @@ public class HotdogsFragment extends Fragment {
             }
         });
 
+        //buttons to add the hotdogs to the orderitems ArrayList
         hotdogOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,6 +120,7 @@ public class HotdogsFragment extends Fragment {
         return root;
     }
 
+    //function that returns a string for the hotdog toppings
     public String getHotDogToppings(CheckBox hdKC, CheckBox hdMC, CheckBox hdRC, CheckBox hdOC, CheckBox hdSC, CheckBox hdCHC, CheckBox hdCC){
         String custom = "";
         if(hdKC.isChecked()){custom += "Ketchup, ";}

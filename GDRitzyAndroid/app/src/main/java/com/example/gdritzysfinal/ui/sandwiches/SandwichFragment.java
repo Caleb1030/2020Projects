@@ -119,7 +119,7 @@ public class SandwichFragment extends Fragment {
                 burgerToppings.setVisibility(view.GONE);
             }
         });
-
+        //buttons to add items to the order
         burgerOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -195,6 +195,7 @@ public class SandwichFragment extends Fragment {
         return root;
     }
 
+    //function to return a string of toppings to the burger
     public String getBurgerToppings(CheckBox bCC, CheckBox bTC, CheckBox bBC, CheckBox bMC, CheckBox bKC, CheckBox bMC2, CheckBox bPC, CheckBox bOC, CheckBox bLC ){
         String custom = "";
         if(bCC.isChecked()){custom += "Cheese, ";}

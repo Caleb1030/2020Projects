@@ -33,6 +33,7 @@ public class ChiliFragment extends Fragment{
         final String[] orderItemsString = {intent.getStringExtra(ORDER_ITEMS)};
         final String[] orderItemsCostsString = {intent.getStringExtra(ORDER_ITEMSCOST)};
         final String[] orderItemsCustomString = {intent.getStringExtra(ORDER_ITEMSCUSTOM)};
+        //sets up the number picker for the chili type
         chiliType.setMaxValue(3);
         chiliType.setMinValue(0);
         final String[] chiliArray = {"3-Way Chili", "4-Way Chili", "5-Way Chili", "7-Way Chili"};
@@ -40,6 +41,7 @@ public class ChiliFragment extends Fragment{
         final double[] costList = {2.99, 3.49, 3.99, 4.49};
         final String[] costListStrings = {"2.99", "3.49", "3.99", "4.49"};
 
+        //adds chili to the order by getting the number picker value
         orderChili.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

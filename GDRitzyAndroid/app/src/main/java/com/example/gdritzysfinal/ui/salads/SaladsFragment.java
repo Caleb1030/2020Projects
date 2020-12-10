@@ -53,11 +53,12 @@ public class SaladsFragment extends Fragment {
         final String[] orderItemsString = {intent.getStringExtra(ORDER_ITEMS)};
         final String[] orderItemsCostsString = {intent.getStringExtra(ORDER_ITEMSCOST)};
         final String[] orderItemsCustomString = {intent.getStringExtra(ORDER_ITEMSCUSTOM)};
-
+        //sets up the number picker for the dressing on the salad
         dressingPick.setMaxValue(5);
         dressingPick.setMinValue(0);
         final String[] dressings = {"Buttermilk Ranch", "Fat Free Ranch", "Light Italian", "Fat Free California French", "Thousand Island", "Dijon Honey Mustard"};
         dressingPick.setDisplayedValues(dressings);
+        //buttons to change the layouts to access the individual item orders
         choiceGardenSalad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +100,7 @@ public class SaladsFragment extends Fragment {
             }
         });
 
+        //return to the main salad screen
         saladHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +114,7 @@ public class SaladsFragment extends Fragment {
             }
         });
 
+        //buttons to add the items to the order
         choiceGardenSaladOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

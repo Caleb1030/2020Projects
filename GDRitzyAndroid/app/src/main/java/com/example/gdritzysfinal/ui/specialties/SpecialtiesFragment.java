@@ -41,6 +41,7 @@ public class SpecialtiesFragment extends Fragment{
         final String[] orderItemsString = {intent.getStringExtra(ORDER_ITEMS)};
         final String[] orderItemsCostsString = {intent.getStringExtra(ORDER_ITEMSCOST)};
         final String[] orderItemsCustomString = {intent.getStringExtra(ORDER_ITEMSCUSTOM)};
+        //buttons to navigate through the layouts
         frySpecial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +66,7 @@ public class SpecialtiesFragment extends Fragment{
             }
         });
 
+        //buttons to add the items to the order
         frySpecialOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +88,7 @@ public class SpecialtiesFragment extends Fragment{
                 orderItemsCostsString[0] = "1.99";
                 intent.putExtra((ORDER_ITEMSCOST), orderItemsCostsString[0]);
                 String custom = " ";
+                //checks if the cheese checkbox is checked
                 if (addCheese.isChecked()){custom = "Cheese";}
                 orderItemsCustomString[0] = custom;
                 intent.putExtra((ORDER_ITEMSCUSTOM), orderItemsCustomString[0]);

@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    //ArrayList to hold all the order items
     public static ArrayList<OrderItems> orderList = new ArrayList<OrderItems>();
 
     @Override
@@ -55,11 +56,12 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
+    //function to add an item to the orderlist
     public static void addItem(OrderItems item){
         orderList.add(item);
     }
 
+    //function to get the orderlist
     public static ArrayList<OrderItems> getItems(){
         return orderList;
     }

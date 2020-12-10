@@ -72,7 +72,7 @@ public class CheckoutFragment extends Fragment {
         costOut += (String.format("$ %.2f", cost));
         costOutput.setText(costOut);
 
-
+        //brings up the credit card layout
         finishOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +83,7 @@ public class CheckoutFragment extends Fragment {
             }
         });
 
+        //brings up the edit order layout
         editOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +94,7 @@ public class CheckoutFragment extends Fragment {
             }
         });
 
+        //places the order and clears the order list
         placeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +109,7 @@ public class CheckoutFragment extends Fragment {
             }
         });
 
+        //removes the selected Item from the order then reprints the order layout
         removeItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +132,7 @@ public class CheckoutFragment extends Fragment {
             }
         });
 
+        //returns to the main checkout screen
         removeItemBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
